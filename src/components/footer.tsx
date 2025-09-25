@@ -6,9 +6,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-4 playfair">Farbstatt</h3>
+            <h3 className="text-lg font-bold mb-4 playfair">Clay Girls</h3>
             <p className="text-gray-400">
-              Ihre kreative Werkstatt für Keramikmalen in Zürich.
+              Your creative workshop for ceramic painting in Zurich.
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -24,14 +24,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4 playfair">Öffnungszeiten</h3>
+            <h3 className="text-lg font-bold mb-4 playfair">Opening Hours</h3>
             <p className="text-gray-400">Mo-Fr: 10:00 - 18:00</p>
             <p className="text-gray-400">Sa: 09:00 - 16:00</p>
-            <p className="text-gray-400">So: Geschlossen</p>
+            <p className="text-gray-400">Sun: Closed</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4 playfair">Kontakt</h3>
+            <h3 className="text-lg font-bold mb-4 playfair">Contact</h3>
             <p className="text-gray-400 flex items-center">
               <MapPin className="mr-2" size={16} /> Musterstrasse 123, 8000 Zürich
             </p>
@@ -46,12 +46,12 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 playfair">Newsletter</h3>
             <p className="text-gray-400 mb-4">
-              Bleiben Sie auf dem Laufenden über unsere Angebote und Workshops.
+              Stay up to date with our offers and workshops.
             </p>
             <form className="flex">
               <input
                 type="email"
-                placeholder="Ihre E-Mail"
+                placeholder="Your Email"
                 className="px-4 py-2 rounded-l-md w-full text-gray-900"
               />
               <button
@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Farbstatt. Alle Rechte vorbehalten.</p>
+          <p>&copy; {new Date().getFullYear()} Farbstatt. All rights reserved.</p>
         </div>
       </div>
     </footer>

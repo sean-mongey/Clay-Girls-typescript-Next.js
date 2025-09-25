@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button';
 import { MobileMenu } from '@/components/ui/mobile-menu';
 
 const navLinks = [
-  { name: 'Startseite', href: '/' },
-  { name: 'Keramikmalen', href: '/pottery' },
+  { name: 'Home', href: '/' },
+  { name: 'Pottery Painting', href: '/pottery' },
   { name: 'Workshops', href: '/workshops' },
-  { name: 'Galerie', href: '/gallery' },
-  { name: 'Kontakt', href: '/contact' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const NavLinks = () => (
@@ -34,7 +34,7 @@ export function Navigation() {
             <Link href="/" className="flex-shrink-0 flex items-center">
               <Edit className="h-8 w-8 text-indigo-600" />
               <span className="ml-2 text-xl font-bold text-gray-900 playfair">
-                Farbstatt
+                Clay Girls
               </span>
             </Link>
           </div>
@@ -42,7 +42,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:ml-6 md:flex md:items-center md:space-x-8">
             <NavLinks />
-            <Button size="default">Termin buchen</Button>
+            <Button size="default">Book Appointment</Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -51,7 +51,7 @@ export function Navigation() {
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <NavLinks />
                 <Button size="default" className="w-full mt-4">
-                  Termin buchen
+                  Book Appointment
                 </Button>
               </div>
             </MobileMenu>

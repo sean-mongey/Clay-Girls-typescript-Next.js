@@ -3,18 +3,18 @@ import { Card } from '@/components/ui/card';
 const galleryItems = [
   {
     image: '/images/modern-cups.jpg',
-    title: 'Moderne Tassen',
-    description: 'Geometrische Muster in kräftigen Farben',
+    title: 'Modern Cups',
+    description: 'Geometric patterns in bold colors',
   },
   {
     image: '/images/kids-plates.jpg',
-    title: 'Kinderteller',
-    description: 'Lustige Tiermotive für die Kleinen',
+    title: 'Children\'s Plates',
+    description: 'Fun animal motifs for the little ones',
   },
   {
     image: '/images/decorative-bowls.jpg',
-    title: 'Dekorative Schalen',
-    description: 'Feine Blumenmuster für Ihr Zuhause',
+    title: 'Decorative Bowls',
+    description: 'Delicate floral patterns for your home',
   },
 ];
 
@@ -24,10 +24,10 @@ export function GallerySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
-            Inspirationen
+            Inspirations
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Entdecken Sie Beispiele unserer Kunden und lassen Sie sich inspirieren
+            Discover examples from our customers and get inspired
           </p>
         </div>
 

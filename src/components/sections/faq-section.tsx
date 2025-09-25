@@ -2,16 +2,16 @@ import { Accordion } from '@/components/ui/accordion';
 
 const faqs = [
   {
-    title: 'Wie lange dauert der gesamte Prozess?',
-    content: 'Die Bemalung selbst dauert je nach Projekt 1-3 Stunden. Nach Abgabe brennen wir Ihre Keramik im Ofen, was etwa eine Woche in Anspruch nimmt. Sie erhalten eine Benachrichtigung, sobald Ihr Stück abholbereit ist.',
+    title: 'How long does the entire process take?',
+    content: 'The painting itself takes 1-3 hours depending on the project. After submission, we fire your ceramic in the kiln, which takes about a week. You\'ll receive a notification as soon as your piece is ready for pickup.',
   },
   {
-    title: 'Kann ich mit Kindern kommen?',
-    content: 'Ja, absolut! Keramikmalen ist ein wunderbarer kreativer Ausdruck für alle Altersgruppen. Wir haben spezielle Kindermotive und ungiftige Farben. Kinder unter 12 Jahren sollten von einem Erwachsenen begleitet werden.',
+    title: 'Can I come with children?',
+    content: 'Yes, absolutely! Ceramic painting is a wonderful creative expression for all age groups. We have special children\'s motifs and non-toxic colors. Children under 12 should be accompanied by an adult.',
   },
   {
-    title: 'Muss ich künstlerisch begabt sein?',
-    content: 'Nein, überhaupt nicht! Wir haben Vorlagen und Muster zur Verfügung, und unser Team steht Ihnen mit Tipps und Tricks zur Seite. Jeder kann schöne Ergebnisse erzielen - es geht um den Spaß am kreativen Prozess.',
+    title: 'Do I need to be artistically talented?',
+    content: 'No, not at all! We have templates and patterns available, and our team is here to help you with tips and tricks. Everyone can achieve beautiful results - it\'s about the fun of the creative process.',
   },
 ];
 
@@ -22,10 +22,10 @@ export function FAQSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
-            Häufige Fragen
+            Frequently Asked Questions
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Alles was Sie über Keramikmalen wissen müssen
+            Everything you need to know about ceramic painting
           </p>
         </div>
 

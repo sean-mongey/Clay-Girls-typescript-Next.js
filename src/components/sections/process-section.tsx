@@ -2,18 +2,18 @@ export function ProcessSection() {
   const steps = [
     {
       number: 1,
-      title: 'Keramik auswählen',
-      description: 'Wählen Sie aus unserer großen Auswahl an weißen Keramikstücken - von Tassen über Teller bis zu Figuren.',
+      title: 'Select Ceramic',
+      description: 'Choose from our large selection of white ceramic pieces - from cups and plates to figurines.',
     },
     {
       number: 2,
-      title: 'Gestalten & Bemalen',
-      description: 'Lassen Sie Ihrer Kreativität freien Lauf mit unseren hochwertigen Farben und Werkzeugen unter fachkundiger Anleitung.',
+      title: 'Design & Paint',
+      description: 'Let your creativity run free with our high-quality colors and tools under expert guidance.',
     },
     {
       number: 3,
-      title: 'Brennen & Abholen',
-      description: 'Wir brennen Ihr Kunstwerk im Ofen und nach etwa einer Woche können Sie Ihr fertiges Stück abholen.',
+      title: 'Fire & Pickup',
+      description: 'We fire your artwork in the kiln and after about a week you can pick up your finished piece.',
     },
   ];
 
@@ -22,10 +22,10 @@ export function ProcessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
-            Unser Prozess
+            Our Process
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Von der Auswahl bis zum fertigen Kunstwerk - so einfach geht's
+            From selection to finished artwork - it's that simple
           </p>
         </div>
 

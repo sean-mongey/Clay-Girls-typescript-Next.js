@@ -9,18 +9,17 @@ export function CTASection() {
         data-aos="fade-up"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">
-          Bereit für Ihr kreatives Abenteuer?
+          Ready for your creative adventure?
         </h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Buchen Sie jetzt Ihren Termin und entdecken Sie die Freude am
-          Keramikmalen
+          Book your appointment now and discover the joy of ceramic painting
         </p>
         <div className="space-y-4 sm:space-y-0 sm:space-x-4">
           <Button variant="outline" size="lg" className="mr-4">
-            Termin buchen <Calendar className="ml-2" size={20} />
+            Book Appointment <Calendar className="ml-2" size={20} />
           </Button>
           <Button variant="outline" size="lg">
-            Kontakt <Mail className="ml-2" size={20} />
+            Contact <Mail className="ml-2" size={20} />
           </Button>
         </div>
       </div>
