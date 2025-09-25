@@ -7,28 +7,44 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    details: 'hello@claygirls.co.uk',
-    link: 'mailto:hello@claygirls.co.uk',
+    details: 'claygirlsflims@gmail.com',
+    link: 'mailto:claygirlsflims@gmail.com',
   },
   {
     icon: Phone,
     title: 'Phone',
-    details: '+44 123 456 7890',
-    link: 'tel:+441234567890',
+    details: '+41 76 262 37 79',
+    link: 'tel:+41762623779',
   },
   {
     icon: MapPin,
     title: 'Location',
-    details: 'London, United Kingdom',
-    link: 'https://maps.google.com/?q=London,UK',
+    details: 'Flims, Switzerland',
+    link: 'https://maps.google.com/?q=Flims,Switzerland',
   },
 ];
 
 export function ContactSection() {
   const handleSubmit = async (data: any) => {
-    // TODO: Integrate with your email service or API
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulated API call
-    console.log('Form data:', data);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      const result = await response.json();
+      console.log('Email sent successfully:', result);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      throw error;
+    }
   };
 
   return (

@@ -8,7 +8,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 playfair">Clay Girls</h3>
             <p className="text-gray-400">
-              Your creative workshop for ceramic painting in Zurich.
+              Your creative workshop for ceramic painting in Flims.
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -33,13 +33,13 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 playfair">Contact</h3>
             <p className="text-gray-400 flex items-center">
-              <MapPin className="mr-2" size={16} /> Musterstrasse 123, 8000 Zürich
+              <MapPin className="mr-2" size={16} /> Flims, Switzerland
             </p>
             <p className="text-gray-400 flex items-center mt-2">
-              <Phone className="mr-2" size={16} /> +41 44 123 45 67
+              <Phone className="mr-2" size={16} /> +41 76 366 756
             </p>
             <p className="text-gray-400 flex items-center mt-2">
-              <Mail className="mr-2" size={16} /> info@farbstatt.ch
+              <Mail className="mr-2" size={16} /> claygirlsflims@gmail.com
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Farbstatt. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ClayGirls.  All rights reserved.</p>
         </div>
       </div>
     </footer>

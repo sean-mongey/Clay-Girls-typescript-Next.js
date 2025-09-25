@@ -1,0 +1,18 @@
+# Email Configuration for Clay Girls Contact Form
+# Add these variables to your .env.local file
+
+# Your Gmail address (the one that will send the emails)
+EMAIL_USER=claygirlsflims@gmail.com
+
+# Your Gmail App Password (NOT your regular password)
+# To get an App Password:
+# 1. Go to https://myaccount.google.com/
+# 2. Enable 2-Factor Authentication if not already enabled
+# 3. Go to Security → App passwords
+# 4. Select "Mail" as the app
+# 5. Generate a new 16-character password
+# 6. Copy that password and paste it below (remove the spaces)
+EMAIL_PASSWORD=your_16_character_app_password_here
+
+# Example: EMAIL_PASSWORD=abcd efgh ijkl mnop
+# Remove the spaces: EMAIL_PASSWORD=abcdefghijklmnop
