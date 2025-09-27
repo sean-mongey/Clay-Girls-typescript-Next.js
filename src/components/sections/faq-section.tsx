@@ -2,16 +2,36 @@ import { Accordion } from '@/components/ui/accordion';
 
 const faqs = [
   {
-    title: 'How long does the entire process take?',
-    content: 'The painting itself takes 1-3 hours depending on the project. After submission, we fire your ceramic in the kiln, which takes about a week. You\'ll receive a notification as soon as your piece is ready for pickup.',
+    title: 'How do I book a workshop or private session?',
+    content: 'You can book through our website, call us at +41 76 262 37 79, or email us at claygirlsflims@gmail.com. We recommend booking in advance as our sessions fill up quickly.',
   },
   {
-    title: 'Can I come with children?',
-    content: 'Yes, absolutely! Ceramic painting is a wonderful creative expression for all age groups. We have special children\'s motifs and non-toxic colors. Children under 12 should be accompanied by an adult.',
+    title: 'What should I bring to a pottery session?',
+    content: 'Just bring yourself and your creativity! We provide all materials including clay, tools, aprons, and glazes. Wear comfortable clothes that you don\'t mind getting a little dirty.',
   },
   {
-    title: 'Do I need to be artistically talented?',
-    content: 'No, not at all! We have templates and patterns available, and our team is here to help you with tips and tricks. Everyone can achieve beautiful results - it\'s about the fun of the creative process.',
+    title: 'How long does it take to complete a piece?',
+    content: 'The initial creation takes 1-3 hours depending on the project. After that, we fire your piece in our kiln, which takes about a week. You\'ll receive a notification when it\'s ready for pickup.',
+  },
+  {
+    title: 'Can beginners join your workshops?',
+    content: 'Absolutely! Our workshops are designed for all skill levels. We provide step-by-step guidance and have experienced instructors to help you create something beautiful, regardless of your experience.',
+  },
+  {
+    title: 'Do you offer private sessions or group bookings?',
+    content: 'Yes! We offer private sessions for individuals, couples, or small groups. Perfect for special occasions, team building, or just a unique experience with friends. Contact us to discuss your needs.',
+  },
+  {
+    title: 'What age groups can participate?',
+    content: 'Our workshops are suitable for ages 8 and up. Children under 12 should be accompanied by an adult. We have special programs and projects designed specifically for different age groups.',
+  },
+  {
+    title: 'How much do workshops cost?',
+    content: 'Workshop prices vary depending on the type and duration. Please contact us for current pricing and availability. We also offer package deals for multiple sessions.',
+  },
+  {
+    title: 'What if I can\'t pick up my finished piece right away?',
+    content: 'No problem! We can hold your finished pieces for up to 3 months. After that, we may need to charge a small storage fee. We\'ll always contact you before any fees are applied.',
   },
 ];
 
