@@ -72,9 +72,17 @@
       padding-right: 1rem;
     }
     
-    /* Prevent carousel overflow */
+    /* Prevent carousel overflow - but allow horizontal scrolling for carousel functionality */
     .carousel-container {
-      overflow-x: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    /* Hide scrollbar for carousel on mobile */
+    .carousel-container::-webkit-scrollbar {
+      display: none;
     }
     
     /* Ensure buttons don't overflow */

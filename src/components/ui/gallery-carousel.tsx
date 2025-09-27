@@ -31,17 +31,19 @@ export function GalleryCarousel({ category, className }: GalleryCarouselProps) {
       </div>
 
       {/* Carousel */}
-      <div className="relative carousel-container">
+      <div className="relative carousel-container px-4 md:px-0">
         <Carousel
           opts={{
             align: "start",
             loop: true,
+            dragFree: true,
+            containScroll: "trimSnaps",
           }}
-          className="w-full max-w-4xl mx-auto overflow-hidden"
+          className="w-full max-w-4xl mx-auto"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="ml-0 md:-ml-4">
             {category.images.map((image, index) => (
-              <CarouselItem key={image.filename} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={image.filename} className="pl-1 md:pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-150">
                     <Card.Content className="p-0">
@@ -61,8 +63,8 @@ export function GalleryCarousel({ category, className }: GalleryCarouselProps) {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
+          <CarouselPrevious className="hidden md:flex -left-4" />
+          <CarouselNext className="hidden md:flex -right-4" />
         </Carousel>
       </div>
 
