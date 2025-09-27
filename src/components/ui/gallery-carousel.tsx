@@ -31,13 +31,13 @@ export function GalleryCarousel({ category, className }: GalleryCarouselProps) {
       </div>
 
       {/* Carousel */}
-      <div className="relative">
+      <div className="relative carousel-container">
         <Carousel
           opts={{
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-4xl mx-auto overflow-hidden"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {category.images.map((image, index) => (

@@ -13,7 +13,7 @@ export function MenuButton({ isOpen, onClick }: MenuButtonProps) {
     <Button
       variant="ghost"
       size="sm"
-      className="lg:hidden"
+      className="md:hidden p-2 hover:bg-clay-200 text-clay-800"
       onClick={onClick}
       aria-expanded={isOpen}
       aria-label={isOpen ? "Close menu" : "Open menu"}

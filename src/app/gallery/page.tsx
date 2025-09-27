@@ -1,23 +1,17 @@
 import { getGalleryData } from "@/lib/gallery"
 import { GalleryCarousel } from "@/components/ui/gallery-carousel"
+import { PageHeader } from "@/components/ui/page-header"
 
 export default async function GalleryPage() {
   const categories = await getGalleryData()
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Gallery
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our collection of handcrafted ceramic pieces. Each item is carefully 
-            created with love and attention to detail.
-          </p>
-        </div>
-      </div>
+      {/* Page Header */}
+      <PageHeader 
+        title="Our Gallery"
+        description="Explore our collection of handcrafted ceramic pieces. Each item is carefully created with love and attention to detail."
+      />
 
       {/* Gallery Categories */}
       <div className="py-16">

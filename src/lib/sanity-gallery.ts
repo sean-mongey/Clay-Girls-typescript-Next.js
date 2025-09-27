@@ -91,3 +91,33 @@ export const GALLERY_QUERY = `
  *   return transformSanityGalleryData(sanityData)
  * }
  */
+
+/**
+ * MIGRATION GUIDE: From File System to Sanity
+ * 
+ * To switch from the current file system approach to Sanity:
+ * 
+ * 1. Update src/lib/gallery.ts:
+ *    - Replace getGalleryData() function with getGalleryDataFromSanity()
+ *    - Keep all interfaces and helper functions
+ * 
+ * 2. The data structure remains exactly the same, so no changes needed in:
+ *    - Gallery page components
+ *    - Gallery carousel components
+ *    - Any other components using gallery data
+ * 
+ * 3. Benefits of Sanity integration:
+ *    - Non-technical users can manage content
+ *    - Rich text editing for descriptions
+ *    - Image optimization and CDN delivery
+ *    - Content scheduling and publishing
+ *    - Multi-language support
+ *    - Content versioning and rollback
+ * 
+ * 4. Current file system approach benefits:
+ *    - No external dependencies
+ *    - Simple file management
+ *    - Works offline
+ *    - No additional costs
+ *    - Perfect for development and testing
+ */

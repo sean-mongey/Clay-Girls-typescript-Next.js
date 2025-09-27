@@ -1,3 +1,6 @@
+import { promises as fs } from 'fs'
+import path from 'path'
+
 export interface GalleryImage {
   src: string
   alt: string
@@ -12,105 +15,112 @@ export interface GalleryCategory {
 }
 
 /**
- * Static gallery data - easily manageable and ready for Sanity integration
- * This approach avoids file system permission issues and is more reliable
+ * Truly dynamic gallery system that reads from file system
+ * This will be easily replaceable with Sanity data later
+ * Perfect for giving owners full control without touching code
  */
 export async function getGalleryData(): Promise<GalleryCategory[]> {
-  // Static data structure - can be easily updated or replaced with Sanity
-  const galleryData: GalleryCategory[] = [
-    {
-      name: "Bowls",
-      slug: "bowls",
-      description: "Handcrafted ceramic bowls perfect for everyday use and special occasions.",
-      images: [
-        {
-          src: "/images/gallery/bowls/DSC_0006.JPG",
-          alt: "Ceramic bowl - DSC_0006",
-          filename: "DSC_0006.JPG"
-        },
-        {
-          src: "/images/gallery/bowls/DSC_0007.JPG",
-          alt: "Ceramic bowl - DSC_0007",
-          filename: "DSC_0007.JPG"
-        },
-        {
-          src: "/images/gallery/bowls/DSC_0008.JPG",
-          alt: "Ceramic bowl - DSC_0008",
-          filename: "DSC_0008.JPG"
-        },
-        {
-          src: "/images/gallery/bowls/DSC_0009.JPG",
-          alt: "Ceramic bowl - DSC_0009",
-          filename: "DSC_0009.JPG"
-        }
-      ]
-    },
-    {
-      name: "Course1",
-      slug: "course1",
-      description: "Student work from our beginner pottery course.",
-      images: [
-        {
-          src: "/images/gallery/course1/DSC_0012.JPG",
-          alt: "Course work - DSC_0012",
-          filename: "DSC_0012.JPG"
-        },
-        {
-          src: "/images/gallery/course1/DSC_0013.JPG",
-          alt: "Course work - DSC_0013",
-          filename: "DSC_0013.JPG"
-        },
-        {
-          src: "/images/gallery/course1/DSC_0014.JPG",
-          alt: "Course work - DSC_0014",
-          filename: "DSC_0014.JPG"
-        },
-        {
-          src: "/images/gallery/course1/DSC_0015.JPG",
-          alt: "Course work - DSC_0015",
-          filename: "DSC_0015.JPG"
-        }
-      ]
-    },
-    {
-      name: "Mugs",
-      slug: "mugs",
-      description: "Unique ceramic mugs designed for your morning coffee or evening tea.",
-      images: [
-        {
-          src: "/images/gallery/mugs/DSC_0010.JPG",
-          alt: "Ceramic mug - DSC_0010",
-          filename: "DSC_0010.JPG"
-        }
-      ]
+  const galleryPath = path.join(process.cwd(), 'public', 'images', 'gallery')
+  
+  try {
+    // Check if gallery directory exists
+    await fs.access(galleryPath)
+    
+    const folders = await fs.readdir(galleryPath, { withFileTypes: true })
+    const categoryFolders = folders.filter(folder => folder.isDirectory())
+    
+    if (categoryFolders.length === 0) {
+      console.warn('No gallery folders found')
+      return []
     }
-  ]
-
-  return galleryData
+    
+    const categories: GalleryCategory[] = []
+    
+    for (const folder of categoryFolders) {
+      try {
+        const folderPath = path.join(galleryPath, folder.name)
+        const files = await fs.readdir(folderPath)
+        
+        // Filter for image files with comprehensive extensions
+        const imageFiles = files.filter(file => {
+          const ext = path.extname(file).toLowerCase()
+          return ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.bmp', '.tiff'].includes(ext)
+        })
+        
+        if (imageFiles.length > 0) {
+          const images: GalleryImage[] = imageFiles.map(file => ({
+            src: `/images/gallery/${folder.name}/${file}`,
+            alt: `${formatCategoryName(folder.name)} - ${path.parse(file).name}`,
+            filename: file
+          }))
+          
+          categories.push({
+            name: formatCategoryName(folder.name),
+            slug: folder.name,
+            images,
+            description: getCategoryDescription(folder.name)
+          })
+        } else {
+          console.warn(`No images found in folder: ${folder.name}`)
+        }
+      } catch (folderError) {
+        console.error(`Error reading folder ${folder.name}:`, folderError)
+        // Continue with other folders even if one fails
+      }
+    }
+    
+    return categories.sort((a, b) => a.name.localeCompare(b.name))
+  } catch (error) {
+    console.error('Error reading gallery data:', error)
+    
+    // Fallback to empty array or cached data if needed
+    return []
+  }
 }
 
 /**
- * Helper function to add new gallery categories
- * This makes it easy to add new categories without touching the main data structure
+ * Formats folder names into readable category names
  */
-export function addGalleryCategory(
-  categories: GalleryCategory[], 
-  newCategory: GalleryCategory
-): GalleryCategory[] {
-  return [...categories, newCategory].sort((a, b) => a.name.localeCompare(b.name))
+function formatCategoryName(slug: string): string {
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
 }
 
 /**
- * Helper function to add images to an existing category
+ * Provides descriptions for different gallery categories
+ * This can be moved to Sanity later for dynamic content
  */
-export function addImagesToCategory(
-  categories: GalleryCategory[],
-  categorySlug: string,
-  newImages: GalleryImage[]
-): GalleryCategory[] {
-  return categories.map(category => 
-    category.slug === categorySlug 
-      ? { ...category, images: [...category.images, ...newImages] }
-      : category
-  )
+function getCategoryDescription(slug: string): string {
+  const descriptions: Record<string, string> = {
+    'bowls': 'Handcrafted ceramic bowls perfect for everyday use and special occasions.',
+    'mugs': 'Unique ceramic mugs designed for your morning coffee or evening tea.',
+    'course1': 'Student work from our beginner pottery course.',
+    'test': 'Test category for demonstrating the dynamic gallery functionality.',
+    'decorative': 'Decorative ceramic pieces to enhance your home.',
+    'plates': 'Beautiful ceramic plates for dining and display.',
+    'vases': 'Elegant ceramic vases for flowers and home decoration.',
+    'sculptures': 'Artistic ceramic sculptures and decorative pieces.',
+    'functional': 'Practical ceramic items for everyday use.',
+    'artwork': 'Unique ceramic artwork and creative pieces.'
+  }
+  
+  return descriptions[slug] || `Beautiful ceramic ${slug} handcrafted with care.`
+}
+
+/**
+ * Get a single category by slug (useful for individual category pages)
+ */
+export async function getGalleryCategory(slug: string): Promise<GalleryCategory | null> {
+  const categories = await getGalleryData()
+  return categories.find(category => category.slug === slug) || null
+}
+
+/**
+ * Get all available category slugs (useful for generating static pages)
+ */
+export async function getGalleryCategorySlugs(): Promise<string[]> {
+  const categories = await getGalleryData()
+  return categories.map(category => category.slug)
 }
