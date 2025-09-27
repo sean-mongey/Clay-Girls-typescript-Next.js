@@ -43,14 +43,14 @@ export function GalleryCarousel({ category, className }: GalleryCarouselProps) {
             {category.images.map((image, index) => (
               <CarouselItem key={image.filename} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <Card className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                  <Card className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-150">
                     <Card.Content className="p-0">
                       <div className="relative aspect-square overflow-hidden">
                         <Image
                           src={image.src}
                           alt={image.alt}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="object-cover group-hover:scale-105 transition-transform duration-150"
                           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           onClick={() => setSelectedImage(image.src)}
                         />

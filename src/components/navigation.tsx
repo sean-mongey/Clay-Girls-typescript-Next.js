@@ -15,7 +15,7 @@ const NavLinks = ({ isMobile = false }: { isMobile?: boolean }) => (
       <Link
         key={link.name}
         href={link.href}
-        className={`text-clay-800 px-3 py-2 rounded-md text-sm font-medium hover:text-amber-800 hover:bg-clay-300 transition-all duration-200 ease-in-out ${
+        className={`text-clay-800 px-3 py-2 rounded-md text-sm font-medium hover:text-amber-800 hover:bg-clay-300 transition-all duration-100 ease-in-out ${
           isMobile ? 'block w-full text-left' : ''
         }`}
       >
